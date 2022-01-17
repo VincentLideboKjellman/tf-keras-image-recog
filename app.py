@@ -17,3 +17,9 @@ import numpy as np
 from util import base64_to_pil
 
 app = Flask(__name__)
+
+# Keras model mobilenet using imagenet dataset
+from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2
+model = MobileNetV2(weights='imagenet')
+
+print('Model loaded. Check http://127.0.0.1:5000/')
