@@ -15,3 +15,5 @@ from tensorflow.keras.preprocessing import image
 # utilites
 import numpy as np
 from util import base64_to_pil
+
+app = Flask(__name__)
