@@ -23,3 +23,6 @@ from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2
 model = MobileNetV2(weights='imagenet')
 
 print('Model loaded. Check http://127.0.0.1:5000/')
+
+# Saved model
+MODEL_PATH = 'models/your_model.h5'
