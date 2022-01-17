@@ -26,7 +26,6 @@ var imagePreview = document.getElementById("image-preview");
 var imageDisplay = document.getElementById("image-display");
 var uploadCaption = document.getElementById("upload-caption");
 var predResult = document.getElementById("pred-result");
-var secondResult = document.getElementById("second-result")
 var loader = document.getElementById("loader");
 
 function submitImage() {
@@ -50,13 +49,11 @@ function clearImage() {
   imagePreview.src = "";
   imageDisplay.src = "";
   predResult.innerHTML = "";
-  secondResult.innerHTML = "";
 
   hide(imagePreview);
   hide(imageDisplay);
   hide(loader);
   hide(predResult);
-  hide(SecondResult);
   show(uploadCaption);
 
   imageDisplay.classList.remove("loading");
@@ -77,10 +74,9 @@ function previewFile(file) {
 
     // reset
     predResult.innerHTML = "";
-    secondResult.innerHTML = "";
     imageDisplay.classList.remove("loading");
 
-    // displayImage(reader.result, "image-display");
+    displayImage(reader.result, "image-display");
   };
 }
 
@@ -97,7 +93,6 @@ function predictImage(image) {
       if (resp.ok)
         resp.json().then(data => {
           displayResult(data);
-          console.log(data)
         });
     })
     .catch(err => {
@@ -106,11 +101,12 @@ function predictImage(image) {
     });
 }
 
-// function displayImage(image, id) {
-//   let display = document.getElementById(id);
-//   display.src = image;
-//   show(display);
-// }
+function displayImage(image, id) {
+  // display image on given id <img> element
+  let display = document.getElementById(id);
+  display.src = image;
+  show(display);
+}
 
 function displayResult(data) {
   // display the result
