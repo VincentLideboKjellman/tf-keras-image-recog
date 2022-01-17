@@ -3,9 +3,12 @@ Tensorflow app with keras model to recognize images and label them
 
 
 #Prereq:
+
 Docker (docker desktop)
 
 Git
+
+
 
 
 #Run in Docker!
