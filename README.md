@@ -10,7 +10,7 @@ git clone https://github.com/VincentLideboKjellman/tf-keras-image-recog.git
 
 cd tf-keras-image-recog
 
-docker build -t my-app
+docker build -t my-app .     (dont forget the dot :) )
 
 docker run -it --rm -p 5000:5000 my-app
 
